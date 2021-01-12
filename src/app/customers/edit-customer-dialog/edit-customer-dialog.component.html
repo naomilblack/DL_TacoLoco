@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>
+  {{newCustomer?'Add':'Edit'}} Customer
+</h2>
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmitForm()">
+  <mat-dialog-content class="container">
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field class="input">
+      <input id="placeholder" matInput placeholder="Address" formControlName="address" />
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button id="add" mat-button mat-raised-button color="primary" type="submit">
+      {{newCustomer?'Save':'Update'}}
+    </button>
+    <button id="cancel" mat-button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</form>

@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Nice to Haves
+
+Moving forward: 
+1. Implement back-end server and add service and mocel files to be called from data source
+2. Implment form validation to ensure all entries include required data.
+3. Expand API model to include more unique data (address line 2, date ordered, customer number, etc)
+3. Implement back end and front end check to ensure no duplicate data is entered.
+4. Implement server side pagination and sorting

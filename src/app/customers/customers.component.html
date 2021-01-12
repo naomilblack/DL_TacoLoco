@@ -1,0 +1,52 @@
+<mat-card>
+      <mat-card-title>    
+            <button id="invite" mat-raised-button color="primary" type="button" (click)="addCustomer()">
+                  Add Customer
+                </button>
+          </mat-card-title>
+    <mat-card-content>
+
+        <table mat-table #table [dataSource]="dataSource.data" class="mat-elevation-z8">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+            </ng-container>
+
+            <!-- Address Column -->
+            <ng-container matColumnDef="address">
+                <th mat-header-cell *matHeaderCellDef> Address </th>
+                <td mat-cell *matCellDef="let row"> {{row.address}}</td>
+            </ng-container>
+
+            <!-- Actions Column -->
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let row; let i = index;">
+                    <ng-container>
+                        <button id="edit" mat-icon-button color="primary" title="Update Customer"
+                            (click)="editCustomer(row, i)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button id="delete" mat-icon-button color="warn" title="Delete Customer"
+                            (click)="deleteCustomer(row)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+
+                    </ng-container>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+        <!-- <mat-paginator 
+        showFirstLastButtons
+        [length] = "0"
+        [pageSizeOptions]="[25, 50, 75]" 
+        >
+    </mat-paginator> -->
+    </mat-card-content>
+</mat-card>
